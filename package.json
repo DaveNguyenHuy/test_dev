@@ -21,13 +21,21 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "test:ci": "craco test --watchAll=false --passWithNoTests",
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -43,7 +51,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
+    "husky": "^7.0.4",
     "postcss": "^7",
+    "prettier": "^2.4.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
