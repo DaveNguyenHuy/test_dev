@@ -1,7 +1,12 @@
 import { FC } from 'react';
+import { MovieList } from './MovieList';
 
 const HomePage: FC = () => {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      <MovieList />
+    </div>
+  );
 };
 
 export default HomePage;
