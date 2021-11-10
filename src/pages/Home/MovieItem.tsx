@@ -19,8 +19,12 @@ export const MovieItem: FC<Props> = ({ movie }) => {
       <div>
         <div className="flex justify-between w-full">
           <div className="w-4/5">
-            <h2 className="text-2xl font-bold">{movie.title}</h2>
-            <p className="text-gray-500">Shared by: {movie.shared_by}</p>
+            <h2 data-testid="videoTitle" className="text-2xl font-bold">
+              {movie.title}
+            </h2>
+            <p data-testid="videoSharedBy" className="text-gray-500">
+              Shared by: {movie.shared_by}
+            </p>
           </div>
           <div className="flex space-x-2">
             <BiLike className="w-6 h-6" />
@@ -28,7 +32,7 @@ export const MovieItem: FC<Props> = ({ movie }) => {
           </div>
         </div>
         <p className="mt-2 text-lg">Description:</p>
-        <p>{movie.description}</p>
+        <p data-testid="videoDescription">{movie.description}</p>
       </div>
     </div>
   );

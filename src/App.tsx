@@ -1,11 +1,12 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { useMovieData } from './hooks/useMoviesData';
 
 import HomePage from './pages/Home';
 import NotFound from './pages/NotFound';
 import ShareVideoPage from './pages/ShareVideo';
-import { Movie, MovieContextData } from './utils/types';
+import { MovieContextData } from './utils/types';
 
 export const MoviesContext = createContext<MovieContextData>({
   movies: [],
@@ -13,11 +14,7 @@ export const MoviesContext = createContext<MovieContextData>({
 });
 
 function App() {
-  const [movies, setMovies] = useState<Movie[]>([]);
-
-  const updateMovies = (data: Movie[]) => {
-    setMovies(data);
-  };
+  const { movies, updateMovies } = useMovieData();
 
   return (
     <MoviesContext.Provider value={{ movies, updateMovies }}>
