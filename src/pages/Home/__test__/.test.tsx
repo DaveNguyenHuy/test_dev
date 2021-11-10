@@ -4,9 +4,6 @@ import { Movie } from '../../../utils/types';
 import { MovieItem } from '../MovieItem';
 import { MovieList } from '../MovieList';
 
-import App from '../../../App';
-import { BrowserRouter } from 'react-router-dom';
-
 beforeEach(() => {
   cleanup();
 });
