@@ -10,14 +10,18 @@ import { MovieContextData } from './utils/types';
 
 export const MoviesContext = createContext<MovieContextData>({
   movies: [],
+  appLoading: true,
+  currentUser: null,
   updateMovies: () => null
 });
 
 function App() {
-  const { movies, updateMovies } = useMovieData();
+  const data = useMovieData();
+
+  if (data.appLoading) return null;
 
   return (
-    <MoviesContext.Provider value={{ movies, updateMovies }}>
+    <MoviesContext.Provider value={data}>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

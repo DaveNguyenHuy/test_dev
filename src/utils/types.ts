@@ -8,5 +8,7 @@ export interface Movie {
 
 export interface MovieContextData {
   movies: Movie[];
+  currentUser: any;
+  appLoading: boolean;
   updateMovies: (movies: Movie[]) => void;
 }
