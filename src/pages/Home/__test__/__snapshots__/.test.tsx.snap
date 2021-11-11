@@ -2,7 +2,7 @@
 
 exports[`testing home components Movie item should render content 1`] = `
 <div
-  class="flex space-x-8 max-w-screen-lg"
+  class="flex space-x-8 max-w-screen-lg w-full"
 >
   <iframe
     class="border-gray-800 border flex-shrink-0 rounded-sm"
@@ -11,7 +11,9 @@ exports[`testing home components Movie item should render content 1`] = `
     title="testing video"
     width="360"
   />
-  <div>
+  <div
+    class="flex-1"
+  >
     <div
       class="flex justify-between w-full"
     >
@@ -32,38 +34,6 @@ exports[`testing home components Movie item should render content 1`] = `
           test@gmail.com
         </p>
       </div>
-      <div
-        class="flex space-x-2"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"
-          />
-        </svg>
-        <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 24 24"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20 3H6.693A2.01 2.01 0 0 0 4.82 4.298l-2.757 7.351A1 1 0 0 0 2 12v2c0 1.103.897 2 2 2h5.612L8.49 19.367a2.004 2.004 0 0 0 .274 1.802c.376.52.982.831 1.624.831H12c.297 0 .578-.132.769-.36l4.7-5.64H20c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-8.469 17h-1.145l1.562-4.684A1 1 0 0 0 11 14H4v-1.819L6.693 5H16v9.638L11.531 20zM18 14V5h2l.001 9H18z"
-          />
-        </svg>
-      </div>
     </div>
     <p
       class="mt-2 text-lg"
@@ -71,6 +41,7 @@ exports[`testing home components Movie item should render content 1`] = `
       Description:
     </p>
     <p
+      class="movie-description"
       data-testid="videoDescription"
     >
       testing video
@@ -84,7 +55,7 @@ exports[`testing home components Movie list should render content 1`] = `
   class="flex flex-col items-center pt-8 space-y-8"
 >
   <div
-    class="flex space-x-8 max-w-screen-lg"
+    class="flex space-x-8 max-w-screen-lg w-full"
   >
     <iframe
       class="border-gray-800 border flex-shrink-0 rounded-sm"
@@ -93,7 +64,9 @@ exports[`testing home components Movie list should render content 1`] = `
       title="movie 01"
       width="360"
     />
-    <div>
+    <div
+      class="flex-1"
+    >
       <div
         class="flex justify-between w-full"
       >
@@ -114,38 +87,6 @@ exports[`testing home components Movie list should render content 1`] = `
             test@example.com
           </p>
         </div>
-        <div
-          class="flex space-x-2"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"
-            />
-          </svg>
-          <svg
-            class="w-6 h-6"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 3H6.693A2.01 2.01 0 0 0 4.82 4.298l-2.757 7.351A1 1 0 0 0 2 12v2c0 1.103.897 2 2 2h5.612L8.49 19.367a2.004 2.004 0 0 0 .274 1.802c.376.52.982.831 1.624.831H12c.297 0 .578-.132.769-.36l4.7-5.64H20c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-8.469 17h-1.145l1.562-4.684A1 1 0 0 0 11 14H4v-1.819L6.693 5H16v9.638L11.531 20zM18 14V5h2l.001 9H18z"
-            />
-          </svg>
-        </div>
       </div>
       <p
         class="mt-2 text-lg"
@@ -153,6 +94,7 @@ exports[`testing home components Movie list should render content 1`] = `
         Description:
       </p>
       <p
+        class="movie-description"
         data-testid="videoDescription"
       >
         movie 01 description
@@ -160,7 +102,7 @@ exports[`testing home components Movie list should render content 1`] = `
     </div>
   </div>
   <div
-    class="flex space-x-8 max-w-screen-lg"
+    class="flex space-x-8 max-w-screen-lg w-full"
   >
     <iframe
       class="border-gray-800 border flex-shrink-0 rounded-sm"
@@ -169,7 +111,9 @@ exports[`testing home components Movie list should render content 1`] = `
       title="movie 02"
       width="360"
     />
-    <div>
+    <div
+      class="flex-1"
+    >
       <div
         class="flex justify-between w-full"
       >
@@ -190,38 +134,6 @@ exports[`testing home components Movie list should render content 1`] = `
             test@example.com
           </p>
         </div>
-        <div
-          class="flex space-x-2"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z"
-            />
-          </svg>
-          <svg
-            class="w-6 h-6"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M20 3H6.693A2.01 2.01 0 0 0 4.82 4.298l-2.757 7.351A1 1 0 0 0 2 12v2c0 1.103.897 2 2 2h5.612L8.49 19.367a2.004 2.004 0 0 0 .274 1.802c.376.52.982.831 1.624.831H12c.297 0 .578-.132.769-.36l4.7-5.64H20c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-8.469 17h-1.145l1.562-4.684A1 1 0 0 0 11 14H4v-1.819L6.693 5H16v9.638L11.531 20zM18 14V5h2l.001 9H18z"
-            />
-          </svg>
-        </div>
       </div>
       <p
         class="mt-2 text-lg"
@@ -229,6 +141,7 @@ exports[`testing home components Movie list should render content 1`] = `
         Description:
       </p>
       <p
+        class="movie-description"
         data-testid="videoDescription"
       >
         movie 02 description

@@ -15,10 +15,13 @@ describe('testing home components', () => {
       title: 'testing video',
       url: 'https://www.youtube.com/embed/test_id',
       description: 'testing video',
-      shared_by: 'test@gmail.com'
+      shared_by: 'test@gmail.com',
+      likes: []
     };
 
-    const { getByTestId, getByTitle, container } = render(<MovieItem movie={data} />);
+    const { getByTestId, getByTitle, container } = render(
+      <MovieItem updateMovie={jest.fn()} movie={data} />
+    );
 
     expect(container.firstChild).toMatchSnapshot();
 
@@ -38,6 +41,7 @@ describe('testing home components', () => {
     const movies: Movie[] = [
       {
         id: '1',
+        likes: [],
         title: 'movie 01',
         description: 'movie 01 description',
         shared_by: 'test@example.com',
@@ -45,6 +49,7 @@ describe('testing home components', () => {
       },
       {
         id: '2',
+        likes: [],
         title: 'movie 02',
         description: 'movie 02 description',
         shared_by: 'test@example.com',
