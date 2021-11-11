@@ -6,6 +6,7 @@ import { useMovieData } from './hooks/useMoviesData';
 import HomePage from './pages/Home';
 import NotFound from './pages/NotFound';
 import ShareVideoPage from './pages/ShareVideo';
+import { ROUTES } from './utils/constants';
 import { MovieContextData } from './utils/types';
 
 export const MoviesContext = createContext<MovieContextData>({
@@ -24,8 +25,8 @@ function App() {
     <MoviesContext.Provider value={data}>
       <Layout>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/share" element={<ShareVideoPage />} />
+          <Route path={ROUTES.home} element={<HomePage />} />
+          <Route path={ROUTES.share} element={<ShareVideoPage />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </Layout>

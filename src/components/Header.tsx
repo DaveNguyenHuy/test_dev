@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { MoviesContext } from '../App';
+import { ROUTES } from '../utils/constants';
 import { auth } from '../utils/firebase';
 import { LoginRegister } from './LoginRegister';
 
@@ -23,7 +24,7 @@ export const Header = () => {
       return (
         <>
           <span>Welcome: {currentUser.email}</span>
-          <Link to="/share">
+          <Link to={ROUTES.share}>
             <button className="p-1.5 border border-white rounded-sm">Share</button>
           </Link>
 
@@ -38,7 +39,7 @@ export const Header = () => {
 
   return (
     <header className="h-16 flex justify-between items-center px-4 shadow-md bg-black text-white sticky top-0">
-      <Link to="/">
+      <Link to={ROUTES.home}>
         <div className="flex items-center space-x-2">
           <FaHome className="w-10 h-10" />
           <span className="text-xl font-bold">Funny Movies</span>

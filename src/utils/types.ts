@@ -12,3 +12,10 @@ export interface MovieContextData {
   appLoading: boolean;
   updateMovies: (movies: Movie[]) => void;
 }
+
+export interface ShareMovieDto {
+  title: string;
+  url: string;
+  shared_by: string;
+  description: string;
+}

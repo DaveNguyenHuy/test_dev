@@ -8,7 +8,7 @@ interface Props {
 
 export const MovieItem: FC<Props> = ({ movie }) => {
   return (
-    <div className="flex space-x-8 max-w-screen-lg">
+    <div className="flex space-x-8 max-w-screen-lg w-full">
       <iframe
         src={movie.url}
         title={movie.title}
@@ -16,7 +16,7 @@ export const MovieItem: FC<Props> = ({ movie }) => {
         width="360"
         className="border-gray-800 border flex-shrink-0 rounded-sm"
       />
-      <div>
+      <div className="flex-1">
         <div className="flex justify-between w-full">
           <div className="w-4/5">
             <h2 data-testid="videoTitle" className="text-2xl font-bold">
@@ -32,7 +32,9 @@ export const MovieItem: FC<Props> = ({ movie }) => {
           </div>
         </div>
         <p className="mt-2 text-lg">Description:</p>
-        <p data-testid="videoDescription">{movie.description}</p>
+        <p data-testid="videoDescription" className="movie-description">
+          {movie.description}
+        </p>
       </div>
     </div>
   );
