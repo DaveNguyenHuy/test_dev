@@ -1,17 +1,26 @@
-import { collection, getDocs, query, addDoc, orderBy } from '@firebase/firestore';
+import {
+  collection,
+  getDocs,
+  query,
+  addDoc,
+  orderBy,
+  limit,
+  setDoc,
+  doc
+} from '@firebase/firestore';
 import { auth, db } from './firebase';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from '@firebase/auth';
 import { YouTubeGetID } from './constants';
-import { ShareMovieDto } from './types';
+import { Movie, ShareMovieDto } from './types';
 
 const moviesCollection = collection(db, 'movies');
 
 export const fetchMovies = async () => {
   try {
-    const q = query(moviesCollection, orderBy('created_time', 'desc'));
+    const q = query(moviesCollection, orderBy('created_time', 'desc'), limit(100));
     const querySnapshot = await getDocs(q);
     const data: any = [];
-    querySnapshot.forEach((doc) => {
+    querySnapshot.forEach(async (doc) => {
       data.push({
         id: doc.id,
         ...doc.data()
@@ -27,7 +36,6 @@ const register = async (email: string, password: string) => {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
     await signInWithEmailAndPassword(auth, email, password);
-    window.location.reload();
   } catch (error) {
     alert('login failed');
   }
@@ -36,7 +44,6 @@ const register = async (email: string, password: string) => {
 export const loginRegister = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-    window.location.reload();
   } catch (error: any) {
     const { message } = error;
     if (message && message.includes('auth/user-not-found')) {
@@ -73,4 +80,9 @@ export const shareMovie = (data: ShareMovieDto) => {
     ...data,
     created_time: new Date().toISOString()
   });
+};
+
+export const updateMovieService = (movie: Movie) => {
+  const { id, ...data } = movie;
+  return setDoc(doc(db, 'movies', id), data, { merge: true });
 };
