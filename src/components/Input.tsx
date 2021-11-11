@@ -9,6 +9,6 @@ interface Props {
   onChange: ChangeEventHandler<HTMLInputElement>;
 }
 
-export const Input: FC<Props> = (props) => {
-  return <input className="focus:outline-none p-1.5 rounded-sm text-black" {...props} />;
+export const Input: FC<Props> = ({ type = 'text', ...rest }) => {
+  return <input className="focus:outline-none p-1.5 rounded-sm text-black" type={type} {...rest} />;
 };
