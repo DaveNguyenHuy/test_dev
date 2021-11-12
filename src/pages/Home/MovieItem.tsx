@@ -14,7 +14,11 @@ export const MovieItem: FC<Props> = ({ movie, updateMovie }) => {
   const [loading, setLoading] = useState(false);
 
   const like: Like | undefined = (movie.likes || []).find((it) => it.email === currentUser?.email);
-  const { isLike, isDislike } = { isLike: !!like && like.like, isDislike: !!like && like.dislike };
+
+  const { isLike, isDislike } = {
+    isLike: !!like && like.like,
+    isDislike: !!like && like.dislike
+  };
 
   const toggleLike = async (key: 'like' | 'dislike') => {
     if (loading) return;
@@ -61,13 +65,17 @@ export const MovieItem: FC<Props> = ({ movie, updateMovie }) => {
                 className="p-1.5 cursor-pointer h-auto hover:bg-gray-200 rounded-full inline-block"
                 onClick={() => toggleLike('like')}
               >
-                <BiLike color={isLike ? 'blue' : 'black'} className="w-6 h-6" />
+                <BiLike data-testid="like" color={isLike ? 'blue' : 'black'} className="w-6 h-6" />
               </span>
               <span
                 className="p-1.5 cursor-pointer h-auto hover:bg-gray-200 rounded-full inline-block"
                 onClick={() => toggleLike('dislike')}
               >
-                <BiDislike color={isDislike ? 'blue' : 'black'} className="w-6 h-6" />
+                <BiDislike
+                  data-testid="dislike"
+                  color={isDislike ? 'blue' : 'black'}
+                  className="w-6 h-6"
+                />
               </span>
             </div>
           )}

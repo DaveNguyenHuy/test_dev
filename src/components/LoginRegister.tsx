@@ -26,7 +26,7 @@ export const LoginRegister = () => {
         type="submit"
         className="p-1.5 border border-white rounded-sm disabled:opacity-80"
       >
-        {loading ? 'Loading...' : 'Signin'}
+        {loading ? 'Loading...' : 'Login/Register'}
       </button>
     </form>
   );

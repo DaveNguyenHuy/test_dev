@@ -15,11 +15,10 @@ test('test input', () => {
 });
 
 test('test login form', () => {
-  const handleChange = jest.fn();
   const { getByPlaceholderText, getByText } = render(<LoginRegister />);
   const emailTextBox = getByPlaceholderText(/email/i);
   const passWordTextBox = getByPlaceholderText(/password/i);
-  const btnSubmit = getByText(/signin/i);
+  const btnSubmit = getByText(/login\/register/i);
   expect(btnSubmit).toBeInTheDocument();
   expect(emailTextBox).toBeInTheDocument();
   expect(passWordTextBox).toBeInTheDocument();
