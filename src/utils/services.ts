@@ -20,6 +20,7 @@ export const fetchMovies = async () => {
     const q = query(moviesCollection, orderBy('created_time', 'desc'), limit(100));
     const querySnapshot = await getDocs(q);
     const data: any = [];
+
     querySnapshot.forEach(async (doc) => {
       data.push({
         id: doc.id,
@@ -28,7 +29,6 @@ export const fetchMovies = async () => {
     });
     return data;
   } catch (error) {
-    console.log('error', error);
     return [];
   }
 };
@@ -64,16 +64,20 @@ export const logOut = async () => {
 };
 
 export const fetchVideoInformation = async (url: string) => {
-  const id = YouTubeGetID(url);
-  if (!id) return null;
-  const data = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?part=snippet&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&id=${id}`
-  );
-  const result = await data.json();
-  if (!result.items || !result.items.length) {
-    return null;
+  try {
+    const id = YouTubeGetID(url);
+    if (!id) return null;
+    const data = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&id=${id}`
+    );
+    const result = await data.json();
+    if (!result.items || !result.items.length) {
+      return null;
+    }
+    return result;
+  } catch (error) {
+    console.log('error', error);
   }
-  return result;
 };
 
 export const shareMovie = (data: ShareMovieDto) => {

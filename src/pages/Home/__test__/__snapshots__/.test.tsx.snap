@@ -53,6 +53,7 @@ exports[`testing home components Movie item should render content 1`] = `
 exports[`testing home components Movie list should render content 1`] = `
 <div
   class="flex flex-col items-center pt-8 space-y-8"
+  data-testid="movie-list"
 >
   <div
     class="flex space-x-8 max-w-screen-lg w-full"

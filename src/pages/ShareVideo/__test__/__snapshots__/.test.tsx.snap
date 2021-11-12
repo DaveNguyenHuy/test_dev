@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`share video page should render correct 1`] = `
+<div
+  class="pt-24"
+>
+  <form
+    class="mx-auto max-w-xl bg-white border-gray-500 relative border-2 px-8 py-12 rounded-md space-y-4 flex flex-col justify-end"
+  >
+    <h2
+      class="rounded-md bg-white px-1 text-2xl absolute -top-5 left-4"
+    >
+      Share a Youtube Movie
+    </h2>
+    <div
+      class="w-full space-x-2 flex"
+    >
+      <label
+        class="text-lg mt-1"
+      >
+        Youtube URL:
+      </label>
+      <div
+        class="space-y-6 flex-1"
+      >
+        <input
+          class="focus:outline-none rounded-sm p-2 border border-gray-500 w-full"
+          name="url"
+          placeholder="youtube url"
+          required=""
+          value=""
+        />
+        <button
+          class="p-1.5 border bg-blue-600 text-white rounded-md w-full"
+        >
+          Share
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

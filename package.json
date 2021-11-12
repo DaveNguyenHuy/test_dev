@@ -24,7 +24,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "test:ci": "craco test --watchAll=false --passWithNoTests",
+    "test:ci": "craco test --watchAll=false",
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "eslint .",
@@ -55,6 +55,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
+    "fetch-mock": "^9.11.0",
+    "fetch-mock-jest": "^1.5.1",
     "husky": "^7.0.4",
     "postcss": "^7",
     "prettier": "^2.4.1",

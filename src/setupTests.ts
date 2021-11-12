@@ -8,10 +8,12 @@ jest.mock('@firebase/firestore', () => ({
   collection: jest.fn(),
   getDocs: jest.fn(),
   query: jest.fn(),
-  addDoc: jest.fn(),
   orderBy: jest.fn(),
   limit: jest.fn(),
   setDoc: jest.fn(),
   doc: jest.fn(),
-  getFirestore: jest.fn()
+  getFirestore: jest.fn(),
+  addDoc() {
+    return { status: 200 };
+  }
 }));

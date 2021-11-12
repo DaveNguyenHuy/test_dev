@@ -24,5 +24,9 @@ export const MovieList: FC<Props> = ({ movies }) => {
     ));
   };
 
-  return <div className="flex flex-col items-center pt-8 space-y-8">{renderContent()}</div>;
+  return (
+    <div data-testid="movie-list" className="flex flex-col items-center pt-8 space-y-8">
+      {renderContent()}
+    </div>
+  );
 };
